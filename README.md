@@ -31,5 +31,7 @@ AccountFinder는 학교 Google 계정 ID 생성 규칙을 기반으로 학번만
 3. "찾기" 버튼을 클릭합니다.
 4. 앱이 자동으로 아이디(이메일)를 계산하여 보여줍니다.
 
+5. 만약 웹 브라우저에서 사용하고 싶다면: https://tlsrlgus.github.io/AccountFinder/
+
 
 
