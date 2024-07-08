@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+    <title>Account Finder</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+    <style>
+        body {
+            background-color: #f3f4f6;
+            overflow: hidden; /* 스크롤바 숨기기 */
+        }
+        .gradient-purple-blue {
+            background: linear-gradient(90deg, #7b2cbf 0%, #3a0ca3 100%);
+        }
+        .btn:hover {
+            transform: scale(1.05);
+            transition: transform 0.2s;
+        }
+        /* 오버레이 스타일 */
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #f0f0f0;
+            opacity: 1;
+            z-index: 1000;
+            transition: opacity 0.3s ease-out;
+        }
+    </style>
+</head>
+<body class="flex items-center justify-center min-h-screen bg-gray-100">
+    <div class="absolute inset-0 flex items-center justify-center">
+        <img alt="Background logo" class="opacity-10" height="600" src="img/campus.png" width="600"/>
+    </div>
+    <div class="relative z-10 p-8 bg-white rounded-lg shadow-lg w-96">
+        <div class="flex justify-center mb-4">
+            <i class="fas fa-users text-6xl gradient-purple-blue text-transparent bg-clip-text"></i>
+        </div>
+        <form class="text-center mb-4" id="accountForm">
+            <input class="w-full p-2 border border-gray-300 rounded-md" id="studentIdInput" placeholder="1학년 학번 혹은 암호화 코드" type="text" autocomplete="off"/>
+        </form>
+        <p class="text-center text-gray-500 font-semibold mb-6">
+            Project : Account Finder
+        </p>
+        <div class="flex justify-center space-x-4">
+            <button onclick="location.href='info.html'" class="px-4 py-2 bg-black text-white rounded-full shadow-md btn">
+                INFO
+            </button>
+            <button id="findButton" class="px-4 py-2 gradient-purple-blue text-white rounded-full shadow-md btn">
+                FIND
+            </button>
+        </div>
+    </div>
+    <div class="absolute bottom-4 flex items-center">
+        <img alt="School logo" class="mr-4" height="70" src="img/SchoolIcon.png" width="50"/>
+        <div class="flex flex-col items-center">
+            <p class="text-center text-gray-700 font-bold text-xl">
+                양주고등학교
+            </p>
+            <p class="text-center text-gray-500 text-sm">
+                제작: 신기현 | 김민규 | 백유진 | 이진혁
+            </p>
+        </div>
+    </div>
+    <div class="overlay" id="overlay"></div> <!-- 오버레이 추가 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="JS/core.js"></script>
+    <script src="JS/main.js"></script>
+    <!-- 추가된 스크립트 -->
+    <script>
+        window.addEventListener("load", function() {
+            const overlay = document.getElementById("overlay");
+            overlay.style.opacity = "0";
+            setTimeout(() => {
+                overlay.style.display = "none";
+            }, 300); // 0.3초 후 오버레이 숨기기
+        });
+    </script>
+    
+</body>
+</html>

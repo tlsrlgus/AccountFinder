@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Developed by tlsrlgus</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+        body, html {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #f0f0f0;
+            font-family: 'Roboto', sans-serif;
+        }
+        .container {
+            position: relative;
+            width: 800px;
+            height: 400px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #logo {
+            width: 150px;
+            opacity: 0;
+            position: absolute;
+            animation: logoAppear 0.5s forwards, logoMoveLeft 0.5s forwards 0.5s;
+        }
+        @keyframes logoAppear {
+            0% {
+                opacity: 0;
+                transform: scale(0);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        @keyframes logoMoveLeft {
+            0% {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+            100% {
+                left: 30%;
+                transform: translateX(-30%);
+            }
+        }
+        .text {
+            font-size: 3em;
+            color: #007bff;
+            opacity: 0;
+            position: absolute;
+            animation: textSlideIn 0.5s forwards 1s;
+            left: 45%;
+            top: 42%;
+        }
+        @keyframes textSlideIn {
+            0% {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        .powered {
+            font-size: 1.5em;
+            color: #000;
+            position: absolute;
+            opacity: 0;
+            animation: textSlideIn 0.5s forwards 1s;
+            left: 45%;
+            top: 56%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container" id="main-content">
+        <img id="logo" src="img/campus.png" alt="NW.js">
+        <div class="text">Account Finder</div>
+        <div class="powered">for YJH</div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            setTimeout(function() {
+                document.getElementById('main-content').style.display = 'none';
+                document.title = 'Developed by tlsrlgus';
+            }, 3000); // 3 seconds for the animations to complete
+            setTimeout(function () {
+                window.location.href = 'main.html';
+            }, 2800)
+
+        });
+    </script>
+    <script src="nothing/KonamiCode.js"></script>
+</body>
+</html>
